@@ -32,14 +32,15 @@ int main(int argc, char ** argv){
     const fs::path rnd_filename = rnd_dir / filename.replace_extension(rnd_extension);
 
     std::fstream rnd_file(rnd_filename, ios_base::in);
+    
+    // TEMPORARIO (SLDQ)
+    file << "EOF\n" << std::string(rnd_filename.filename()) << "\nRND" << cend;
+
 
     if (rnd_file.good() == false) {
         std::cout << "Aborted: Ainda nao exieste arquivo \'.rnd\' para essa instancia.\n"; 
         return -1;
     }
-
-    // TEMPORARIO (SLDQ)
-    file << "EOF\n" << std::string(filename) << "\nRND" << cend;
 
     std::string line;
     std::getline(rnd_file, line);

@@ -28,9 +28,7 @@ function get_instance_info()
 
     i = 1
     for line in eachline(f)
-        #println(line)
         if name == true
-            println(line)
             inst = line
             break
         end
