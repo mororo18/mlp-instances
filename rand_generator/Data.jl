@@ -7,9 +7,24 @@ function get_instance_info()
 
     line = readline(f)
     dimension = parse(Int, line)
-
+    #matrix = Matrix{Float64}(undef, dimension,dimension)
     matrix = zeros(dimension, dimension)
 
+    """
+    matrix = Array{Array{Float64, 1},1}()
+    for i in 1:dimension
+        l = Array{Float64, 1}()
+        for j in 1:dimension
+            push!(l, 0.0)
+        end
+        #println(l)
+
+        push!(matrix, l)
+    end
+    """
+
+    name = false
+    inst = ""
 
     i = 1
     for line in eachline(f)
