@@ -27,7 +27,7 @@ int main(int argc, char ** argv){
 
     fs::path filename = fs::path(argv[1]).filename();
 
-    const fs::path rnd_dir = "../rand_iter_values";
+    const fs::path rnd_dir = "rnd";
     const fs::path rnd_extension = ".rnd";
     const fs::path rnd_filename = rnd_dir / filename.replace_extension(rnd_extension);
 
@@ -53,7 +53,7 @@ int main(int argc, char ** argv){
 
     file.close();
 
-    std::system(std::string("mv " + ofile + " ../../").c_str());
+    std::system(std::string("cp " + ofile + " ../").c_str());
 
     return 0;
 }

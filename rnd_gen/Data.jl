@@ -3,7 +3,7 @@ matrix = nothing
 
 function get_instance_info()
 
-    f = open("distance_matrix")
+    f = open("../distance_matrix")
 
     line = readline(f)
     dimension = parse(Int, line)

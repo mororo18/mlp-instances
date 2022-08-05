@@ -453,7 +453,7 @@ function main()
     @printf "TIME: %.6lf\n" time
     #println("reinsertion calls ", info.reinsert_count)
     #@printf "RVND iteracoes %d\n" it
-    f = open("../rand_iter_values/" * inst_nome, "w")
+    f = open("../rnd/" * inst_nome, "w")
     write(f, string(length(info.rand_values)) * "\n")
     for val in info.rand_values
         write(f, string(val) * "\n")
