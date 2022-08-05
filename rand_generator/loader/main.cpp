@@ -11,11 +11,11 @@ int main(int argc, char ** argv){
     int dimension;
     double ** cost;
     const char * cend = "\n";
-    
+    const std::string ofile = "distance_matrix";
     readData(argc, argv, &dimension, &cost);
 
 
-    std::ofstream file("distance_matrix");
+    std::ofstream file(ofile);
     file << dimension << cend;
     for (int i = 1; i <= dimension; i++) {
         for (int j = i+1; j <= dimension; j++)
@@ -52,6 +52,8 @@ int main(int argc, char ** argv){
     }
 
     file.close();
+
+    std::system(std::string("mv " + ofile + " ../../").c_str());
 
     return 0;
 }
