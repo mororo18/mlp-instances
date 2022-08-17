@@ -17,13 +17,22 @@ def inst_size(inst):
     size = int(''.join([char for char in inst if char in numbrs]))
     return size
 
-SIZE = 1100
+SIZE = 201
         
-inst_gen = [inst for inst in inst_files if (inst not in rnd_files and inst_size(inst) < SIZE)]
+inst_gen = [inst for inst in inst_files if (inst_size(inst) < SIZE)]
+#inst_gen = [inst for inst in inst_files if (inst not in rnd_files and inst_size(inst) < SIZE)]
 
 #inst_list = [inst for
-print(inst_gen)
+
+print(len(inst_gen))
 #exit(0)
+myList = open("myList", "w")
+for inst in inst_gen:
+    myList.write(inst + ".tsp\n")
+
+myList.close()
+
+"""
 os.chdir("../")
 
 for inst in inst_gen:
@@ -36,3 +45,4 @@ for inst in inst_gen:
     os.system("julia main.jl")
     os.chdir("../")
     os.system("./load " + inst)
+    """
